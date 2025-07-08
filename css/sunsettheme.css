@@ -1,0 +1,24 @@
+body, html {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #a770ef 100%);
+    color: #4b244a;
+}
+.container {
+    background: #fff6f0;
+    border: 1.5px solid #fcb69f;
+}
+.display, .white-bg-content, footer.white-bg {
+    background: #fff6f0;
+    color: #4b244a;
+}
+button.rounded-circle {
+    background: #fcb69f;
+    color: #4b244a;
+}
+button.rounded-circle:active {
+    background: #a770ef;
+    color: #fff;
+}
+.theme-dot[data-theme="sunset"] {
+    background: #fcb69f;
+    border-color: #a770ef;
+}

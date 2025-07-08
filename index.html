@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Online Calculator - Scientific, Free & Fast</title>
+    <meta name="description"
+        content="Modern online calculator: free, scientific, fast and easy to use. Perform math, trigonometry, percentage, root, logarithm and advanced calculations. Light, dark and animated themes.">
+    <meta name="keywords"
+        content="calculator, online calculator, scientific calculator, free calculator, math, trigonometry, percentage, root, logarithm, fast, modern, animated, light theme, dark theme, advanced calculator, web calculator, scientific, sum, subtract, multiply, divide, sin, cos, tan, log, sqrt">
+    <meta name="author" content="E. Vieira">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Modern Online Calculator - Scientific, Free & Fast">
+    <meta property="og:description"
+        content="Modern online calculator: free, scientific, fast and easy to use. Perform math, trigonometry, percentage, root, logarithm and advanced calculations. Light, dark and animated themes.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://seusite.com/"> <!-- Altere para sua URL real -->
+    <meta property="og:site_name" content="Modern Online Calculator">
+    <link rel="canonical" href="https://seusite.com/"> <!-- Altere para sua URL real -->
+    <link rel="stylesheet" href="./css/customStyle.css">
+    <link rel="stylesheet" href="./css/themaclaro.css" id="themaclaro" disabled>
+    <link rel="stylesheet" href="./css/darkthemasoft.css" id="darkthemasoft" disabled>
+    <link rel="stylesheet" href="./css/animation-1.css" id="anim1" disabled>
+    <link rel="stylesheet" href="./css/animation-2.css" id="anim2" disabled>
+    <link rel="stylesheet" href="./css/foresttheme.css" id="foresttheme" disabled>
+    <link rel="stylesheet" href="./css/sunsettheme.css" id="sunsettheme" disabled>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="selectorTheme">
+                <div class="theme-switcher">
+                    <div class="theme-dot" data-theme="claro" title="Light"></div>
+                    <div class="theme-dot" data-theme="escuro" title="Dark"></div>
+                    <div class="theme-dot" data-theme="forest" title="Forest"></div>
+                    <div class="theme-dot" data-theme="sunset" title="Sunset"></div>
+                    <div class="theme-indicator"></div>
+                    <div class="theme-line"></div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="display-wrapper">
+                <div class="display" id="display"></div>
+                <button class="backspace-btn" title="Backspace">⌫</button>
+            </div>
+            <div class="buttons">
+                <button class="rounded-circle">(</button>
+                <button class="rounded-circle">)</button>
+                <button class="rounded-circle">√</button>
+                <button class="rounded-circle">log</button>
+                <button class="rounded-circle">C</button>
+                <button class="rounded-circle">7</button>
+                <button class="rounded-circle">8</button>
+                <button class="rounded-circle">9</button>
+                <button class="rounded-circle">/</button>
+                <button class="rounded-circle">%</button>
+                <button class="rounded-circle">4</button>
+                <button class="rounded-circle">5</button>
+                <button class="rounded-circle">6</button>
+                <button class="rounded-circle">*</button>
+                <button class="rounded-circle">sin</button>
+                <button class="rounded-circle">1</button>
+                <button class="rounded-circle">2</button>
+                <button class="rounded-circle">3</button>
+                <button class="rounded-circle">-</button>
+                <button class="rounded-circle">cos</button>
+                <button class="rounded-circle">0</button>
+                <button class="rounded-circle">.</button>
+                <button class="rounded-circle">=</button>
+                <button class="rounded-circle">+</button>
+                <button class="rounded-circle">tan</button>
+            </div>
+        </section>
+    </div>
+    <!-- TEXTO EXPLICATIVO FORA DO CONTAINER -->
+    <aside class="info-section">
+        <div class="white-bg-content">
+            <h2>How to Use This Calculator</h2>
+            <p>
+                Welcome! This modern online calculator lets you perform both basic and advanced math operations. You can
+                add, subtract, multiply, divide, calculate percentages, roots, logarithms, and trigonometric functions
+                (sin,
+                cos, tan). Click the buttons or use your keyboard to enter numbers and operations. The display shows
+                your
+                input and results instantly.
+            </p>
+            <p>
+                The calculator supports parentheses for grouping and prioritizing operations, just like on a scientific
+                calculator. You can use the square root and logarithm buttons for quick access to these functions.
+                Trigonometric functions (sin, cos, tan) expect input in degrees, making it easy to solve geometry and
+                physics problems.
+            </p>
+            <p>
+                The theme selector at the top allows you to switch between Light, Dark, and two Animated themes, so you
+                can
+                personalize your experience. Your selected theme and the last calculation are automatically saved in
+                your
+                browser, so you can continue where you left off.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:32px;">
+                <ul style="flex:1 1 260px; margin:0;">
+                    <li><b>Parentheses</b> <code>( )</code>: Group operations and control calculation order.</li>
+                    <li><b>√</b>: Calculates the square root.</li>
+                    <li><b>log</b>: Computes the base-10 logarithm.</li>
+                    <li><b>C</b>: Clears the display.</li>
+                    <li><b>Backspace</b> <code>⌫</code>: Removes the last character.</li>
+                    <li><b>sin, cos, tan</b>: Trigonometric functions (degrees).</li>
+                    <li><b>=</b>: Shows the result.</li>
+                    <li><b>Theme Selector</b>: Switch between Light, Dark, and Animated themes. Your theme and last
+                        calculation are saved automatically.</li>
+                    <li><b>Keyboard Support</b>: You can also use your keyboard for faster input and calculations.</li>
+                    <li><b>Responsive Design</b>: The calculator adapts to your device, working perfectly on desktops,
+                        tablets, and smartphones.</li>
+                </ul>
+                <div style="flex:1 1 260px;">
+                    <h3>Historical Curiosities</h3>
+                    <p>
+                        The first mechanical calculators appeared in the 17th century, such as Blaise Pascal's
+                        "Pascaline" and Leibniz's "Stepped Reckoner". Electronic calculators became popular in the
+                        1970s,
+                        revolutionizing education and science. Today, online calculators like this one combine the power
+                        of scientific calculators with the convenience of the web.
+                    </p>
+                    <p>
+                        In the past, calculations were performed using abacuses and slide rules. The evolution to
+                        digital calculators has made complex math accessible to everyone, from students to engineers.
+                    </p>
+                    <p>
+                        Modern calculators can handle not only arithmetic, but also scientific, statistical, and even
+                        programming calculations, making them essential tools in education, research, and daily life.
+                    </p>
+                    <p class="fun-fact">
+                        <b>Fun fact:</b> The word "calculator" comes from the Latin <i>calculare</i>, meaning "to count
+                        with small stones" (calculi), which were used in ancient abacuses.
+                    </p>
+                    <p class="secondary">
+                        Today, calculators are not only tools for arithmetic but also for learning, exploring
+                        mathematical concepts, and solving real-world problems quickly and efficiently.
+                    </p>
+                </div>
+            </div>
+            <p style="margin-top:24px;">
+                Whether you are a student, teacher, engineer, or just need to solve a quick math problem, this
+                calculator is designed to be intuitive and powerful. Try different operations, explore the scientific
+                functions, and enjoy a seamless calculation experience on any device!
+            </p>
+            <p style="margin-top:12px;">
+                If you have suggestions or find any issues, feel free to contact the developer. This calculator is
+                constantly being improved to offer the best experience for all users.
+            </p>
+        </div>
+    </aside>
+    <footer class="white-bg">
+        <hr>
+        <p>
+            <b>Terms of Use:</b> This calculator is provided as-is, without any warranty. It is intended for
+            educational and general calculation purposes only. The developer is not responsible for any errors or
+            damages resulting from its use.
+        </p>
+        <p>
+            <b>Open Source:</b> The source code of this calculator is free and open. You are welcome to view,
+            modify, and distribute it under the terms of the <a href="https://opensource.org/licenses/MIT"
+                target="_blank" rel="noopener">MIT License</a>.
+        </p>
+        <p>
+            &copy; 2025 E. Vieira
+        </p>
+    </footer>
+    <script src="./js/calculatorScript.js"></script>
+    <script src="./js/userState.js"></script>
+</body>
+
+</html>

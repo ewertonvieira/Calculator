@@ -1,0 +1,24 @@
+body, html {
+    background: linear-gradient(135deg, #e6f4ea 0%, #b7c9a8 100%);
+    color: #2e4637;
+}
+.container {
+    background: #f4f9f4;
+    border: 1.5px solid #b7c9a8;
+}
+.display, .white-bg-content, footer.white-bg {
+    background: #f4f9f4;
+    color: #2e4637;
+}
+button.rounded-circle {
+    background: #b7c9a8;
+    color: #2e4637;
+}
+button.rounded-circle:active {
+    background: #7eaa92;
+    color: #fff;
+}
+.theme-dot[data-theme="forest"] {
+    background: #7eaa92;
+    border-color: #2e4637;
+}
