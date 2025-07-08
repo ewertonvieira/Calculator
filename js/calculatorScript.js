@@ -12,7 +12,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 valorAtual = valorAtual.slice(0, -1);
             } else if (valor === '=') {
                 try {
-                    let resultado = eval(valorAtual);
+                    // Substitui as funções científicas por chamadas JS válidas
+                    let expressao = valorAtual
+                        .replace(/√\(/g, 'Math.sqrt(')
+                        .replace(/sin\(/g, 'Math.sin(Math.PI/180*')
+                        .replace(/cos\(/g, 'Math.cos(Math.PI/180*')
+                        .replace(/tan\(/g, 'Math.tan(Math.PI/180*')
+                        .replace(/log\(/g, 'Math.log10(');
+
+                    // Fecha parênteses abertos para funções trigonométricas
+                    let openFuncs = (expressao.match(/Math\.(sin|cos|tan)\(Math\.PI\/180\*/g) || []).length;
+                    let openSqrt = (expressao.match(/Math\.sqrt\(/g) || []).length;
+                    let openLog = (expressao.match(/Math\.log10\(/g) || []).length;
+                    let totalOpen = openFuncs + openSqrt + openLog;
+                    let totalClose = (expressao.match(/\)/g) || []).length;
+                    let toClose = totalOpen - totalClose;
+                    if (toClose > 0) expressao += ')'.repeat(toClose);
+
+                    let resultado = eval(expressao);
                     if (typeof resultado === 'number' && !Number.isInteger(resultado)) {
                         resultado = resultado.toFixed(8).replace(/\.?0+$/, '');
                     }
@@ -30,45 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 } catch {
                     valorAtual = 'Erro';
                 }
-            } else if (valor === 'sin' || valor === 'cos' || valor === 'tan') {
-                try {
-                    let match = valorAtual.match(/(\d+\.?\d*)$/);
-                    if (match) {
-                        let num = parseFloat(match[1]);
-                        let rad = num * Math.PI / 180; 
-                        let result = 0;
-                        if (valor === 'sin') result = Math.sin(rad);
-                        if (valor === 'cos') result = Math.cos(rad);
-                        if (valor === 'tan') result = Math.tan(rad);
-                        valorAtual = valorAtual.replace(/(\d+\.?\d*)$/, result.toFixed(8).replace(/\.?0+$/, ''));
-                    }
-                } catch {
-                    valorAtual = 'Erro';
-                }
+            } else if (valor === 'sin' || valor === 'cos' || valor === 'tan' || valor === 'log') {
+                valorAtual += valor + '(';
             } else if (valor === '√') {
-                try {
-                    let match = valorAtual.match(/(\d+\.?\d*)$/);
-                    if (match) {
-                        let num = parseFloat(match[1]);
-                        if (num < 0) throw 'Erro';
-                        let result = Math.sqrt(num);
-                        valorAtual = valorAtual.replace(/(\d+\.?\d*)$/, result.toFixed(8).replace(/\.?0+$/, ''));
-                    }
-                } catch {
-                    valorAtual = 'Erro';
-                }
-            } else if (valor === 'log') {
-                try {
-                    let match = valorAtual.match(/(\d+\.?\d*)$/);
-                    if (match) {
-                        let num = parseFloat(match[1]);
-                        if (num <= 0) throw 'Erro';
-                        let result = Math.log10(num);
-                        valorAtual = valorAtual.replace(/(\d+\.?\d*)$/, result.toFixed(8).replace(/\.?0+$/, ''));
-                    }
-                } catch {
-                    valorAtual = 'Erro';
-                }
+                valorAtual += '√(';
             } else if (valor === '(' || valor === ')') {
                 valorAtual += valor;
             } else {
